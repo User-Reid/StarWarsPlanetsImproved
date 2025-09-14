@@ -5,11 +5,8 @@ var baseAddress = "https://swapi.info/api/";
 var requestUri = "planets";
 
 var json = await taco.Read(baseAddress, requestUri);
-var data = JsonSerializer.Deserialize<List<Root>>(json);
+var root = JsonSerializer.Deserialize<List<Result>>(json);
 
-foreach (var planet in data)
-{
-  System.Console.WriteLine($"{planet.name}");
-}
 
+System.Console.WriteLine("Press any key to close.");
 Console.ReadKey();

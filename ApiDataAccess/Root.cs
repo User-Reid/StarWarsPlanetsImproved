@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-public record Root(
+public record Result(
         [property: JsonPropertyName("name")] string name,
         [property: JsonPropertyName("rotation_period")] string rotation_period,
         [property: JsonPropertyName("orbital_period")] string orbital_period,
@@ -16,4 +16,3 @@ public record Root(
         [property: JsonPropertyName("edited")] DateTime edited,
         [property: JsonPropertyName("url")] string url
     );
-    
