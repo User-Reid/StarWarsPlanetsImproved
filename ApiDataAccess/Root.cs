@@ -16,3 +16,4 @@ public record Root(
         [property: JsonPropertyName("edited")] DateTime edited,
         [property: JsonPropertyName("url")] string url
     );
+    
