@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using MockStarWarsData;
+using StarWarsPlanetsStats.DTOs;
 
 try
 {
@@ -42,5 +43,31 @@ public class StarWarsPlanetsStatsApp
     }
 
     var root = JsonSerializer.Deserialize<List<Result>>(json);
+
+    var planets = ToPlanets(root);
+  }
+
+  private IEnumerable<Planet> ToPlanets(Root? root)
+  {
+    if (root is null)
+    {
+      throw new ArgumentNullException(nameof(root));
+    }
+  }
+}
+
+public readonly record struct Planet
+{
+  public string Name { get; }
+  public int Diameter { get; }
+  public int SurfaceWater { get; }
+  public int Population { get; }
+
+  public Planet(string name, int diameter, int surfaceWater, int population)
+  {
+    Name = name;
+    Diameter = diameter;
+    SurfaceWater = surfaceWater;
+    Population = population;
   }
 }
