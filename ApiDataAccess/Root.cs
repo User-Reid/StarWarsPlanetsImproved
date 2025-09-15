@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
-
-public record Result(
+namespace StarWarsPlanetsOriginal
+{
+public record Root(
         [property: JsonPropertyName("name")] string name,
         [property: JsonPropertyName("rotation_period")] string rotation_period,
         [property: JsonPropertyName("orbital_period")] string orbital_period,
@@ -16,3 +17,4 @@ public record Result(
         [property: JsonPropertyName("edited")] DateTime edited,
         [property: JsonPropertyName("url")] string url
     );
+}

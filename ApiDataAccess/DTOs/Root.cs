@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace StarWarsPlanetsStats.DTOs
 {
-public record Root(
+public record Result(
   [property: JsonPropertyName("count")] int count,
   [property: JsonPropertyName("next")] string next,
   [property: JsonPropertyName("previous")] object previous,
