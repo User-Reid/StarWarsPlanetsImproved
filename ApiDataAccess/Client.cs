@@ -1,4 +1,4 @@
-public class Client
+public class ApiDataReader : IApiDataReader
 {
 
   public async Task<string> Read(string baseAddress, string requestUri)
