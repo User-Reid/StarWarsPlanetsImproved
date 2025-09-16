@@ -54,7 +54,16 @@ public class StarWarsPlanetsStatsApp
     {
       throw new ArgumentNullException(nameof(root));
     }
-    throw new NotImplementedException();
+
+    var planets = new List<Planet>();
+
+    foreach (var planetDto in root)
+    {
+      Planet planet =
+      planets.Add(planet)
+    }
+
+    return planets;
   }
 }
 
