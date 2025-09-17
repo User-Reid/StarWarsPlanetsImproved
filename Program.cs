@@ -59,9 +59,9 @@ public class StarWarsPlanetsStatsApp
 
     foreach (var planetDto in root)
     {
-      Planet planet =
-      planets.Add(planet)
-    }
+      Planet planet = (Planet)planetDto;
+      planets.Add(planet);
+    };
 
     return planets;
   }
@@ -84,5 +84,30 @@ public readonly record struct Planet
     Diameter = diameter;
     SurfaceWater = surfaceWater;
     Population = population;
+  }
+
+  public static explicit operator Planet(Result planetDto)
+  {
+    var name = planetDto.name;
+    var diameter = int.Parse(planetDto.diameter);
+
+    int? population = null;
+    if (int.TryParse(planetDto.population, out int populationParsed))
+    {
+      population = populationParsed;
+    }
+
+    int? surfaceWater = null;
+    if (int.TryParse(planetDto.population, out int surfaceWaterParsed))
+    {
+      population = surfaceWaterParsed;
+    }
+
+    int? surfaceWater = ToIntOrNull(planetDto.surfaceWater);
+  }
+
+  private static int? ToIntOrNull(string surfaceWater)
+  {
+    throw new NotImplementedException();
   }
 }
