@@ -91,19 +91,10 @@ public readonly record struct Planet
     var name = planetDto.name;
     var diameter = int.Parse(planetDto.diameter);
 
-    int? population = null;
-    if (int.TryParse(planetDto.population, out int populationParsed))
-    {
-      population = populationParsed;
-    }
+    int? population = planetDto.population.ToIntOrNull();
+    int? surfaceWater = planetDto.surfaceWater.ToIntOrNull();
 
-    int? surfaceWater = null;
-    if (int.TryParse(planetDto.population, out int surfaceWaterParsed))
-    {
-      population = surfaceWaterParsed;
-    }
-
-    int? surfaceWater = ToIntOrNull(planetDto.surfaceWater);
+    return new Planet(name, diameter, surfaceWater, population);
   }
 
   private static int? ToIntOrNull(string surfaceWater)
