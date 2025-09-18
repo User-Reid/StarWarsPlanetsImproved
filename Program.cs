@@ -46,6 +46,10 @@ public class StarWarsPlanetsStatsApp
     var root = JsonSerializer.Deserialize<List<Root>>(json);
 
     var planets = ToPlanets(root);
+    foreach (var planet in planets)
+    {
+      System.Console.WriteLine(planet);
+    }
   }
 
   private IEnumerable<Planet> ToPlanets(IEnumerable<Root>? root)
