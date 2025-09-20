@@ -106,3 +106,5 @@ public readonly record struct Planet
     throw new NotImplementedException();
   }
 }
+
+// System.Console.WriteLine("Have to go to RG's birthday but do not want to break the coding streak!");
