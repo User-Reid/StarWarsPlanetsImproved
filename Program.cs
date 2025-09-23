@@ -106,4 +106,3 @@ public readonly record struct Planet
     throw new NotImplementedException();
   }
 }
-System.Console.WriteLine("Testing");
