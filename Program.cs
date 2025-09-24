@@ -106,3 +106,4 @@ public readonly record struct Planet
     throw new NotImplementedException();
   }
 }
+System.Console.WriteLine("Going to pick it up tomorrow.");
